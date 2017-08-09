@@ -1,13 +1,21 @@
 <!doctype html>
 <html>
-<head><title></title>
+<head>
+	<title></title>
+	<style></style>
 <!-- jQuery -->
 <script src="http://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript">
 </script>
-<style></style>
 <script>
+console.log('The document is just being loaded');
+$(document).ready(function() {
+	console.log('The document is loaded!');
+});
 </script>
 </head>
 <body>
+<script lang='javascript'>
+	console.log('The document is almost loaded');
+</script>
 </body>
 </html>
