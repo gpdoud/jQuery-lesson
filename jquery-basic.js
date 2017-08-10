@@ -13,7 +13,7 @@ $().ready(function() {
 			$('p').css('color','black');
 			color = true;
 		}
-		$('#p4').fadeToggle();
+		$('#p4').toggle();
 	})
 });
 
