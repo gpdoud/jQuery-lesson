@@ -19,6 +19,30 @@ $().ready(function() {
 			}
 		}
 	});
+	$("#Cellphone").blur(function() {
+		var cellphone = $(this).val();
+		var valid = true;
+		var errors = [];
+		if(cellphone.length != 12) {
+			errors.push("Cellphone must contain 12 characters.");
+			$(this).focus();
+		} else {
+			for(var idx = 0; idx < cellphone.length; idx++ ) {
+				if(idx == 3 || idx == 7) {
+					if(cellphone[idx].indexOf('-') == -1) {
+						errors.push("Dashes in wrong location or missing");
+						$(this).focus();
+						break;
+					}
+				} else if("0123456789".indexOf(cellphone[idx]) == -1) {
+					errors.push("Invalid char in cellphone");
+					$(this).focus();
+					break;
+				}
+			}
+		}
+		$("#msg").text(errors.join());
+	});
 
 	$("button").click(function() {
 		var friends = [];
